@@ -1,3 +1,12 @@
+<style>
+    .classname > input[type="text"]{
+        height: 38px;
+        margin-bottom: 0px;
+    }
+/*    select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+        margin-bottom: 10px !important;
+    }*/
+</style>
 <?php
 			if(isset($_GET['id']))
 			{
@@ -15,6 +24,19 @@
 
 ?>
 <div align="left" style="margin-left:100px;"></div>
+
+<div style="color:#000;margin-left:120px">
+    <span class="classname" style="font-size: 20px;">
+            Reason :
+            <input name="cancel_membership" type="text" id="submit" value="" placeholder="Reason">
+        </span>
+        <span style="margin-left:0px;">
+            <a href="index.php?page=cancelmembership&nic=<?php if(isset($_GET['id'])){ echo $row['Cnic'];}?>">
+                <input name="button" type="button" class="btn btn-large btn-primary" id="submit" value="Cancel Membership">
+            </a>
+        </span>
+</div>
+<br />
 <div align="center" style="color:#000;margin-left:20px"><span><a href="index.php?page=editmember&id=<?php echo $mid;?>"><input type="button" name="button" value="Update Membership Records" class="btn btn-large btn-primary">
 </button></a></span><strong style="color:#F00"> &nbsp;Search Result: &nbsp;&nbsp;&nbsp;</strong> <strong style="color:#F00"><?php if(isset($mid)) { echo strtoupper($row['Name']);}?><span style="margin-left:20px;"><a href="index.php?page=paymenthistory&id=<?php if(isset($_GET['id'])){ echo $_GET['id'];}?>">
 <input name="button" type="button" class="btn btn-large btn-primary" id="submit" value="View Payment History"></a></span>
